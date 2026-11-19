@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "Activity 2 - SPI",
+  "editor": "wokwi",
+  "parts": [
+    { "id": "esp", "type": "board-esp32-s3-devkitc-1", "top": 0, "left": 0,
+      "attrs": { "env": "micropython-20260406-v1.28.0", "flashSize": "8" } },
+    { "id": "la1", "type": "wokwi-logic-analyzer", "top": -150, "left": -30, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "" ],
+    [ "esp:RX", "$serialMonitor:TX", "" ],
+    [ "esp:12", "la1:D0", "orange", [ "h-20", "v-20" ] ],
+    [ "esp:11", "la1:D1", "green", [ "h-30", "v-30" ] ],
+    [ "esp:13", "la1:D2", "purple", [ "h-40", "v-40" ] ],
+    [ "esp:10", "la1:D3", "blue", [ "h-50", "v-50" ] ],
+    [ "esp:11", "esp:13", "gray", [ "h20", "v20" ] ],
+    [ "esp:GND.1", "la1:GND", "black", [ "h-60", "v-10" ] ]
+  ]
+}

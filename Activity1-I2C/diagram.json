@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "author": "Activity 1 - I2C",
+  "editor": "wokwi",
+  "parts": [
+    { "id": "esp", "type": "board-esp32-s3-devkitc-1", "top": 0, "left": 0,
+      "attrs": { "env": "micropython-20260406-v1.28.0", "flashSize": "8" } },
+    { "id": "lcd1", "type": "wokwi-lcd1602", "top": -120, "left": -60, "attrs": { "pins": "i2c" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "" ],
+    [ "esp:RX", "$serialMonitor:TX", "" ],
+    [ "esp:8", "lcd1:SDA", "green", [ "h-20", "v-20" ] ],
+    [ "esp:9", "lcd1:SCL", "blue", [ "h-30", "v-30" ] ],
+    [ "esp:3V3.1", "lcd1:VCC", "red", [ "h-40", "v-10" ] ],
+    [ "esp:GND.1", "lcd1:GND", "black", [ "h-50", "v-10" ] ]
+  ]
+}
